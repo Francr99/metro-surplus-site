@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metro Surplus and Electrical</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 40s linear infinite;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="bg-white text-black px-4 sm:px-8 md:px-10 lg:px-16">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-[#0a1725] to-[#0e1c2b] text-white py-6 shadow-md">
+    <div class="flex items-center justify-between max-w-screen-lg mx-auto">
+      <h1 class="text-3xl font-bold tracking-wide">Metro <span class="text-blue-500">Surplus</span></h1>
+      <nav class="space-x-6 text-base">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="services.html" class="hover:underline">Services</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Slideshow Section -->
+  <div class="overflow-hidden w-full py-10">
+    <div class="flex gap-6 animate-scroll whitespace-nowrap">
+      <img src="Image 1.jpg" alt="Metro Surplus 1" class="h-64 rounded-xl shadow-xl object-cover" />
+      <img src="Image 3.jpg" alt="Metro Surplus 2" class="h-64 rounded-xl shadow-xl object-cover" />
+      <img src="Image 5.jpg" alt="Metro Surplus 3" class="h-64 rounded-xl shadow-xl object-cover" />
+      <img src="Image 1.jpg" alt="Metro Surplus 1 copy" class="h-64 rounded-xl shadow-xl object-cover" />
+      <img src="Image 3.jpg" alt="Metro Surplus 2 copy" class="h-64 rounded-xl shadow-xl object-cover" />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="flex items-center justify-center text-white text-center mt-10 mb-12">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gray-800 px-6 py-3 rounded-xl shadow-lg max-w-2xl">
+      Top Buyer of Electrical Surplus Nationwide
+    </h2>
+  </section>
+
+  <!-- Social Media Icons -->
+  <section class="py-6 flex justify-center items-center gap-6 text-xl text-gray-600">
+    <a href="https://facebook.com/MetroSurplus" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://google.com" target="_blank" class="hover:text-red-600 transition"><i class="fab fa-google"></i></a>
+    <a href="https://www.instagram.com/metrosurplusandelectrical/" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="hover:text-red-500 transition"><i class="fab fa-pinterest-p"></i></a>
+    <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="hover:text-red-700 transition"><i class="fab fa-yelp"></i></a>
+    <a href="#" class="hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
+  </section>
+
+  <!-- About -->
+  <section class="py-10 max-w-screen-lg mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Welcome to Metro Surplus and Electrical</h2>
+    <p class="italic text-lg mb-2">Located in Clinton Township, MI — Serving All 50 States</p>
+    <p class="text-xl">Family-owned for 30+ years, we buy and sell electrical surplus equipment with unbeatable service and pricing.</p>
+  </section>
+
+  <!-- What We Buy -->
+  <section class="bg-gray-100 py-10 max-w-screen-lg mx-auto rounded-xl px-6">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-center">What We Buy</h3>
+    <p class="mb-6 text-lg text-center">We pay top dollar for new and used equipment:</p>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 list-disc ml-6 text-lg text-left">
+      <li>Circuit Breakers</li>
+      <li>Switchgear</li>
+      <li>Fittings</li>
+      <li>Electrical Wire</li>
+      <li>MCC Buckets</li>
+      <li>Transformers (Dry & Oil)</li>
+      <li>Generators</li>
+      <li>Safety Switches</li>
+      <li>Pipe & Valves</li>
+      <li>Buss Plugs</li>
+      <li>Buss Wey</li>
+      <li>Interior</li>
+    </ul>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-10 max-w-screen-lg mx-auto text-center">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4">Why Choose Metro Surplus?</h3>
+    <ul class="space-y-3 text-lg">
+      <li>✔️ 30+ Years of Industry Experience</li>
+      <li>✔️ Family-Owned and Operated</li>
+      <li>✔️ Fast, Fair & Reliable Transactions</li>
+      <li>✔️ We Come to You — On-Site Buying Available</li>
+      <li>✔️ Serving All 50 States</li>
+      <li>✔️ Top Dollar Paid for Electrical Equipment</li>
+    </ul>
+  </section>
+
+  <!-- Location -->
+  <section class="bg-gray-100 py-10 max-w-screen-lg mx-auto rounded-xl text-center px-6">
+    <h3 class="text-2xl md:text-3xl font-bold mb-2">Our Location</h3>
+    <p class="text-lg">📍 37575 S Groesbeck Hwy, Clinton Township, MI 48036</p>
+    <p class="text-lg mt-2">
+      📞 <a href="tel:5863595573" class="text-blue-600 hover:underline">(586) 455 1329</a><br>
+      📧 <a href="mailto:metrosurplusandelectrical@gmail.com" class="text-blue-600 hover:underline">metrosurplusandelectrical@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Sticky Call Button for Mobile -->
+  <a href="tel:5864551329" class="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg block md:hidden z-50">
+    📞 Call Now
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4 text-sm mt-10">
+    &copy; 2025 Metro Surplus and Electrical. All rights reserved.
+  </footer>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
