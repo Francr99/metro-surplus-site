@@ -11,13 +11,6 @@
     body {
       font-family: 'Barlow Condensed', sans-serif;
     }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-scroll {
-      animation: scroll 40s linear infinite;
-    }
   </style>
 </head>
 <body class="bg-white text-black px-4 sm:px-8 md:px-10 lg:px-16">
@@ -25,7 +18,7 @@
   <!-- Header -->
   <header class="bg-gradient-to-b from-[#0a1725] to-[#0e1c2b] text-white py-6 shadow-md">
     <div class="flex items-center justify-between max-w-screen-lg mx-auto">
-      <h1 class="text-3xl font-bold tracking-wide">Metro <span class="text-blue-500">Surplus</span></h1>
+      <h1 class="text-3xl text-yellow-500 font-bold tracking-wide">Metro <span class="text-yellow-500">Surplus</span></h1>
       <nav class="space-x-6 text-base">
         <a href="index.html" class="hover:underline">Home</a>
         <a href="about.html" class="hover:underline">About</a>
@@ -35,14 +28,15 @@
     </div>
   </header>
 
-  <!-- Slideshow Section -->
-  <div class="overflow-hidden w-full py-10">
-    <div class="flex gap-6 animate-scroll whitespace-nowrap">
-      <img src="image7.jpg" alt="Metro Surplus" class="h-64 rounded-xl shadow-xl object-contain" />
-      <img src="image4.jpg" alt="Electrical Equipment" class="h-64 rounded-xl shadow-xl object-contain" />
-      <img src="image7.jpg" alt="Metro Surplus" class="h-64 rounded-xl shadow-xl object-contain" />
-      <img src="image4.jpg" alt="Electrical Equipment" class="h-64 rounded-xl shadow-xl object-contain" />
+  <!-- Swipable Slideshow -->
+  <div class="relative overflow-hidden w-full max-w-4xl mx-auto mt-10">
+    <div id="carousel" class="flex transition-transform duration-500">
+      <img src="image7.jpg" alt="Slide 1" class="h-64 object-contain rounded-xl shadow-xl w-full flex-shrink-0" />
+      <img src="image4.jpg" alt="Slide 2" class="h-64 object-contain rounded-xl shadow-xl w-full flex-shrink-0" />
+      <img src="image5.jpg" alt="Slide 3" class="h-64 object-contain rounded-xl shadow-xl w-full flex-shrink-0" />
     </div>
+    <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black">❮</button>
+    <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black">❯</button>
   </div>
 
   <!-- Hero Section -->
@@ -53,23 +47,19 @@
   </section>
 
   <!-- Social Media Icons -->
-<section class="py-6 flex justify-center items-center gap-6 text-xl text-gray-600">
-  <a href="https://facebook.com/MetroSurplus" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://google.com" target="_blank" class="hover:text-red-600 transition"><i class="fab fa-google"></i></a>
-  <a href="https://www.instagram.com/metrosurplusandelectrical/" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
-  <a href="https://ebay.us/m/qUjrVx" target="_blank" class="hover:text-red-600 transition"><i class="fab fa-ebay"></i></a>
-  <a href="#" class="hover:text-red-500 transition"><i class="fab fa-pinterest-p"></i></a>
-  <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
-  <a href="#" class="hover:text-red-700 transition"><i class="fab fa-yelp"></i></a>
-  <a href="#" class="hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
-</section>
+  <section class="py-6 flex justify-center items-center gap-6 text-xl text-gray-600">
+    <a href="https://www.facebook.com/profile.php?id=61579110804475" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://share.google/EqMrbRVouoWNrvF5L" target="_blank" class="hover:text-red-600 transition"><i class="fab fa-google"></i></a>
+    <a href="https://www.instagram.com/metrosurplusandelectrical/" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+    <a href="https://ebay.us/m/qUjrVx" target="_blank" class="hover:text-red-600 transition"><i class="fab fa-ebay"></i></a>
+  </section>
 
   <!-- Services Section -->
   <section class="py-12 max-w-screen-lg mx-auto px-4">
     <h2 class="text-4xl font-bold mb-4 text-center">Our Services</h2>
     <p class="text-lg mb-10 text-center">
       We buy and sell surplus electrical equipment, offering fast, reliable service and fair pricing across United States. We purchase all types of circuit breakers: Industrial, Commercial, and Residential.
-          We provide industrial plants clean up and interior demolition.
+      We provide industrial plants clean up and interior demolition.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -109,6 +99,37 @@
   <footer class="bg-black text-white text-center p-4 text-sm mt-10">
     &copy; 2025 Metro Surplus and Electrical. All rights reserved.
   </footer>
+
+  <!-- Floating Call Now Button -->
+  <a href="tel:5864551329" class="fixed bottom-6 right-6 bg-blue-600 text-white text-lg font-bold px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition z-50 animate-bounce">
+    📞 Call Now
+  </a>
+
+  <!-- Carousel JS -->
+  <script>
+    const carousel = document.getElementById("carousel");
+    const slides = carousel.querySelectorAll("img");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].clientWidth;
+      carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+  </script>
 
 </body>
 </html>
